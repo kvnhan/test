@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="746.0" prefWidth="997.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SearchMenuController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="162.0" />
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="813.0" />
+        <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="22.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.0" prefHeight="111.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="35.0" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="498.0" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.0" prefHeight="102.0" vgrow="ALWAYS" />
+    </rowConstraints>
+    <children>
+        <GridPane style="-fx-background-color: #e74c3c;" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="98.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="668.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="96.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <TextField fx:id="searchTextField" promptText="Find..." GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                <JFXButton fx:id="searchButton" onAction="#search" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: red;" text="Search" textFill="#f5f4f4" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                <JFXButton fx:id="helpSearchButton" onAction="#needHelp" prefHeight="25.0" prefWidth="77.0" text="Help" textFill="#f8f7f7" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+                <JFXComboBox fx:id="choiceBox" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: white;" GridPane.rowIndex="1" />
+            </children>
+        </GridPane>
+        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="579.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="412.0" minWidth="10.0" prefWidth="256.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label fx:id="Result" prefHeight="17.0" prefWidth="257.0" />
+                <GridPane GridPane.columnIndex="1">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                    </rowConstraints>
+                    <children>
+                        <JFXRadioButton fx:id="ListView" selected="true" text="List View" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="View" />
+                            </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="ImageView" text="Image View" toggleGroup="$View" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+                    </children>
+                </GridPane>
+            </children>
+        </GridPane>
+        <GridPane style="-fx-background-color: #e74c3c;">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="12.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="128.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="COLA SEARCH" wrappingWidth="124.13671875" GridPane.columnIndex="1">
+                    <font>
+                        <Font name="System Bold" size="32.0" />
+                    </font>
+                </Text>
+            </children>
+        </GridPane>
+        <GridPane GridPane.rowIndex="2">
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" maxWidth="134.0" minWidth="6.0" prefWidth="6.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="134.0" minWidth="10.0" prefWidth="128.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="65.0" minWidth="6.0" prefWidth="6.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="61.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="112.0" minHeight="4.0" prefHeight="61.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="230.0" minHeight="10.0" prefHeight="107.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="290.0" minHeight="10.0" prefHeight="248.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="294.0" minHeight="10.0" prefHeight="33.0" vgrow="NEVER" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+            </rowConstraints>
+            <children>
+                <VBox prefHeight="99.0" prefWidth="128.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <children>
+                        <Label prefHeight="35.0" prefWidth="140.0" text="Submitted After:" />
+                        <DatePicker fx:id="endDate" />
+                    </children>
+                </VBox>
+                <VBox prefHeight="106.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <Label prefHeight="35.0" prefWidth="140.0" text="Submitted Before:" />
+                        <DatePicker fx:id="startDate" />
+                    </children>
+                </VBox>
+                <VBox prefHeight="219.0" prefWidth="128.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <children>
+                        <JFXRadioButton fx:id="normalSearchRadio" prefHeight="68.0" prefWidth="0.0" selected="true" text="Normal Search">
+                     <toggleGroup>
+                                <ToggleGroup fx:id="Search" />
+                     </toggleGroup></JFXRadioButton>
+                        <JFXRadioButton fx:id="intersectSearchRadio" prefHeight="73.0" prefWidth="96.0" text="Refine Search" toggleGroup="$Search" wrapText="true" />
+                        <JFXRadioButton fx:id="unionSearchRadio" prefHeight="86.0" prefWidth="81.0" text="Append Search to Current List" toggleGroup="$Search" wrapText="true" />
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>
+        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="228.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="268.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="437.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="12.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <JFXRadioButton fx:id="csvDownload" prefHeight="17.0" prefWidth="79.0" text="CSV" GridPane.rowIndex="1">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="download" />
+                    </toggleGroup>
+                </JFXRadioButton>
+                <JFXRadioButton fx:id="tabDownload" text="Tab-Delimited" toggleGroup="$download" GridPane.rowIndex="2" />
+                <JFXRadioButton fx:id="customDownload" prefHeight="17.0" prefWidth="154.0" text="Custom Delimitor:" toggleGroup="$download" GridPane.rowIndex="3" />
+                <TextField fx:id="CustomDelimiter" promptText="Insert Delimiter Here" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <JFXButton fx:id="downloadButton" prefHeight="25.0" prefWidth="134.0" text="Download Results" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            </children>
+        </GridPane>
+        <JFXHamburger fx:id="Back" onDragDetected="#back" GridPane.rowIndex="3" />
+        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e74c3c;" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
+        <GridPane GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <TableView fx:id="table" editable="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="idColumn" prefWidth="122.0" text="ID" />
+                        <TableColumn fx:id="brandNameColumn" prefWidth="148.0" text="Brand Name" />
+                        <TableColumn fx:id="nameColumn" prefWidth="147.0" text="Fancy Name" />
+                        <TableColumn fx:id="alcoholTypeColumn" prefWidth="106.0" text="Type" />
+                        <TableColumn fx:id="locationColumn" minWidth="0.0" prefWidth="170.0" text="Location" />
+                        <TableColumn fx:id="contentColumn" minWidth="0.0" prefWidth="141.0" text="Alcohol Content" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+            </children>
+        </GridPane>
+    </children>
+</GridPane>
